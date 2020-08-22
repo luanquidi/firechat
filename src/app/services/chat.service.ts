@@ -37,6 +37,7 @@ export class ChatService {
 
   logout(): void {
     this.auth.signOut();
+    this.user = {};
   }
 
   loadMessages(): Observable<any> {
