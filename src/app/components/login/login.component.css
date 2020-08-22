@@ -1,0 +1,21 @@
+.card-login {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #424242;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+    width: 254px;
+}
+
+.title {
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    text-align: center;
+    color: white;
+    font-family: unset;
+    padding: 24px;
+}
+
+.btn-login {
+    background-color: #5546f3;
+    color: white;
+}

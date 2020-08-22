@@ -1,7 +1,7 @@
-<h1 class="display-4 text-center">TopChat</h1>
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center my-chat chat-compoennt">
+    <img class="img-login img-chat" src="https://cdn170.picsart.com/upscale-241633703022212.png?type=webp&to=min&r=640" width="80" height="80">
     <div class="chat-window">
         <app-chat></app-chat>
-        <button></button>
     </div>
+    <button class="btn btn-outline-danger btn-salir" (click)="chatService.logout()">Salir</button>
 </div>

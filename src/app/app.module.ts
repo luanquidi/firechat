@@ -16,13 +16,15 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { ChatremakeComponent } from './components/chatremake/chatremake.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ChatremakeComponent
   ],
   imports: [
     BrowserModule,

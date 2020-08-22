@@ -1,18 +1,18 @@
-<div style="display: flex; align-items: center; justify-content: space-between;">
-    <span class="display-4">Chat</span>
-    <button class="btn btn-outline-danger" (click)="chatService.logout()">Bye</button>
-</div>
+<!-- <div style="display: flex; align-items: center; justify-content: space-between;">
+</div> -->
 <hr>
-<div class="app-mensajes" id="app-mensajes">
+<div class="app-mensajes" id="app-mensajes" [ngStyle]="{'background-image':  environmentUID == chatService.user.uid ? 'url(https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)' : 'https://images.unsplash.com/photo-1564470939458-1289338e2d85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80'}">
     <div *ngFor="let item of chatService.chats" [ngClass]="{'text-right': chatService.user.uid == item.uid}">
-        <span class="badge" [ngClass]="{ 'badge-primary': chatService.user.uid == item.uid, 'badge-success': chatService.user.uid != item.uid }">{{ chatService.user.nombre }}</span>
-        <p>
+        <span class="badge" [ngClass]="{ 'badge-primary': chatService.user.uid == item.uid, 'badge-success': chatService.user.uid != item.uid }">
+            {{ item.nombre }}
+        </span>
+        <p class="text-white">
             {{ item.mensaje}}
         </p>
     </div>
 </div>
 <div class="d-flex">
-
-    <input style="margin-top: 5px; width: 80%;" class="form-control" type="text" name="mensaje" [(ngModel)]="mensaje" placeholder="Enviar mensaje..." (keyup.enter)="sendMessage()">
+    <input style="margin-top: 5px; width: 86%;" class="form-control" type="text" name="mensaje" [(ngModel)]="mensaje" placeholder="Enviar mensaje..." (keyup.enter)="sendMessage()">
     <button class="btn" (click)="sendMessage()">🔝</button>
 </div>
+<hr>

@@ -19,6 +19,7 @@ export class ChatService {
   // tslint:disable-next-line: no-shadowed-variable
   constructor( private afs: AngularFirestore, public auth: AngularFireAuth, private router: Router) {
     this.auth.authState.subscribe(user => {
+      console.log(user);
       if (!user) {
         this.router.navigate(['/login']);
         return;
@@ -26,6 +27,7 @@ export class ChatService {
       this.router.navigate(['/home']);
       this.user.nombre = user.displayName;
       this.user.uid = user.uid;
+      this.user.image = user.photoURL;
     });
   }
 
@@ -51,7 +53,8 @@ export class ChatService {
   }
 
   addMessage(texto: string): any {
-    const mensaje: Mensaje = {
+    // tslint:disable-next-line: prefer-const
+    let mensaje: Mensaje = {
       nombre: this.user.nombre,
       mensaje: texto,
       fecha: new Date().getTime(),

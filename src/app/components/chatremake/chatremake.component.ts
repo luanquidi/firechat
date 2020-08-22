@@ -1,21 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
-import { environment } from '../../../environments/environment';
 
 @Component({
-  selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styles: [
-  ]
+  selector: 'app-chatremake',
+  templateUrl: './chatremake.component.html',
+  styleUrls: ['./chatremake.component.scss']
 })
-export class ChatComponent implements OnInit {
-
+export class ChatremakeComponent implements OnInit {
   mensaje = '';
   elemento: any;
-  environmentUID: string;
 
   constructor(public chatService: ChatService) {
-    this.environmentUID = environment.isForbbiden[1];
     this.chatService.loadMessages().subscribe(() => {
       setTimeout(() => {
         this.elemento.scrollTop = this.elemento.scrollHeight;
@@ -39,4 +34,5 @@ export class ChatComponent implements OnInit {
         })
         .catch(() => console.log('Error'));
   }
+
 }

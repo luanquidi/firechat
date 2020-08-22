@@ -13,6 +13,11 @@ export const environment = {
     messagingSenderId: '529193729415',
     appId: '1:529193729415:web:0154dd32f6d5bda2f4a722',
   },
+  isForbbiden: [
+    'ccqjvAaGwYds9sTeaNgonwKLREU2',
+    'foyWibUbDyU2ekztUY1RXlfXaCf2'
+  ],
+  backgroundUsers: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 };
 
 /*

@@ -1,0 +1,9 @@
+.chat-compoennt {
+    flex-direction: column;
+}
+
+.img-chat {
+    margin-bottom: 40px;
+    background-color: transparent;
+    border: none;
+}

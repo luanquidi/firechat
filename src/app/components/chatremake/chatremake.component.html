@@ -1,0 +1,26 @@
+<div class="chat">
+    <div class="chat-title">
+        <h1>{{ chatService.user.nombre }}</h1>
+        <!-- <h2>Supah</h2> -->
+        <figure class="avatar">
+            <img [src]="chatService.user.image" /></figure>
+    </div>
+    <div class="messages">
+        <div class="messages-content">
+            <div *ngFor="let item of chatService.chats" [ngClass]="{'text-right': chatService.user.uid == item.uid}">
+                <span class="badge" [ngClass]="{ 'badge-primary': chatService.user.uid == item.uid, 'badge-success': chatService.user.uid != item.uid }">
+                    {{ item.nombre }}
+                </span>
+                <p>
+                    {{ item.mensaje}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="message-box">
+        <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+        <button type="submit" class="message-submit">Send</button>
+    </div>
+
+</div>
+<div class="bg"></div>

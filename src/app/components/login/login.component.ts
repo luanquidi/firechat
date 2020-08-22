@@ -7,7 +7,6 @@ import { ChatService } from '../../services/chat.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   constructor(public chatService: ChatService) { }
 
   ngOnInit(): void {}
