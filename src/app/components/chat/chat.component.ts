@@ -36,7 +36,16 @@ export class ChatComponent implements OnInit {
         .then(() => {
           console.log('Mensaje enviado');
           this.mensaje = '';
+          this.chatService.isTyping = false;
         })
         .catch(() => console.log('Error'));
+  }
+
+  isTyping(): void {
+    if (this.mensaje.length === 0){
+      this.chatService.isTyping = false;
+    } else {
+      this.chatService.isTyping = true;
+    }
   }
 }

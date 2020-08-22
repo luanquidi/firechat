@@ -15,11 +15,11 @@ export class ChatService {
   private itemsCollection: AngularFirestoreCollection<Mensaje>;
   public chats: Mensaje[] = [];
   public user: any = {};
+  public isTyping = false;
 
   // tslint:disable-next-line: no-shadowed-variable
   constructor( private afs: AngularFirestore, public auth: AngularFireAuth, private router: Router) {
     this.auth.authState.subscribe(user => {
-      console.log(user);
       if (!user) {
         this.router.navigate(['/login']);
         return;
