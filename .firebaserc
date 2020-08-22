@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "firechat-laq-angular": {
+      "hosting": {
+        "firechat": [
+          "firechat-laq-angular"
+        ]
+      }
+    }
+  }
+}

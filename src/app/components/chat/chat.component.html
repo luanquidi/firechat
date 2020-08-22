@@ -1,0 +1,18 @@
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <span class="display-4">Chat</span>
+    <button class="btn btn-outline-danger" (click)="chatService.logout()">Bye</button>
+</div>
+<hr>
+<div class="app-mensajes" id="app-mensajes">
+    <div *ngFor="let item of chatService.chats" [ngClass]="{'text-right': chatService.user.uid == item.uid}">
+        <span class="badge" [ngClass]="{ 'badge-primary': chatService.user.uid == item.uid, 'badge-success': chatService.user.uid != item.uid }">{{ chatService.user.nombre }}</span>
+        <p>
+            {{ item.mensaje}}
+        </p>
+    </div>
+</div>
+<div class="d-flex">
+
+    <input style="margin-top: 5px; width: 80%;" class="form-control" type="text" name="mensaje" [(ngModel)]="mensaje" placeholder="Enviar mensaje..." (keyup.enter)="sendMessage()">
+    <button class="btn" (click)="sendMessage()">🔝</button>
+</div>
